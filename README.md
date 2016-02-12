@@ -1,2 +1,3 @@
 # javascript-filter
-Filtrar elementos a partir de sus data attributes del lado del cliente
+
+Esqueleto de posible implementación para filtrar elementos DOM del lado del cliente.
