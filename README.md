@@ -53,4 +53,4 @@ This is the HTML code I used for the list:
 ```
 
 
-Check out the [demo][http://nicanor.github.io/2015/12/24/vanilla-javascript-filter.html].
+Check out the demo: http://nicanor.github.io/2015/12/24/vanilla-javascript-filter.html.
