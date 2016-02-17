@@ -1,38 +1,18 @@
-var Manager, manager;
+var Refresh = (function () {
+  var elements = document.getElementById('colorful-animals-list').children,
+      length   = elements.length,
+      select   = document.getElementById('color-select');
 
-Manager = function(elements) {
-  this.elements = elements;
+  select.addEventListener('change', function(event) {
+    Refresh();
+    event.preventDefault();
+  });
 
-  this.refresh = function() {
-    this.elements.hide();
-    this.elements.filter(this.filter).show();
+  return function () {
+    var selected_color = select.value;
+    for (var i = 0; i < length; i++) {
+      elements[i].style.display =
+        (!selected_color || elements[i].dataset.color === selected_color) ? '' : 'none';
+    }
   };
-
-  this.cancel = function() {
-    // ...
-    this.elements.show();
-  };
-
-  this.filter = function(index, element) {
-    var data, chosen_attribute;
-    data = element.dataset;
-    // This is where you should implement your filters
-    chosen_attribute = 'ok'
-    return data.some_attribute === chosen_attribute;
-  };
-};
-
-manager = function() {
-  // elements = ...
-  return new Manager(elements);
-};
-
-filter_button.on('click', function(e) {
-  manager().refresh();
-  return false;
-});
-
-cancel_button.on('click', function(e) {
-  manager().cancel();
-  return false;
-});
+})();
